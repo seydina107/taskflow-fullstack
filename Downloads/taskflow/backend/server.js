@@ -13,7 +13,7 @@ app.use(express.json());
 connectDB();
 
 app.get("/", (req, res) => {
-  res.send("API TaskFlow fonctionne 🚀");
+  res.send("API TaskFlow fonctionne ");
 });
 
 app.use("/api/auth", require("./routes/authRoutes"));
