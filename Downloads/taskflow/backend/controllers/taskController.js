@@ -38,6 +38,9 @@ const createTask = async (req, res) => {
 
   tasks.push(newTask);
   res.status(201).json(newTask);
+
+  const io = req.app.get("io");
+io.emit("task:created", newTask);
 };
 
 // Lire toutes les tâches de l'utilisateur connecté
@@ -90,6 +93,8 @@ const updateTask = async (req, res) => {
   if (req.body.projectId !== undefined) {
     task.projectId = req.body.projectId;
   }
+  const io = req.app.get("io");
+io.emit("task:updated", task);
 
   res.json(task);
 };
