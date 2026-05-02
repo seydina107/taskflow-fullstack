@@ -38,7 +38,7 @@ DELETE /api/tasks/:id
 Créer un fichier `.env` :
 
 PORT=5000  
-JWT_SECRET=your_secret_key  
+JWT_SECRET=my_secret_key  
 
 ## Installation
 
